@@ -1,4 +1,4 @@
 Slim-OmniROM
 ============
 
-Slim OmniROM é um projeto Open Source quê aprimora ROMs suportadas
+Slim CyanogenMod for Galaxy S Advance (GT-I9070)
