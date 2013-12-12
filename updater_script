@@ -1,0 +1,48 @@
+run_program("/sbin/busybox", "mount", "/system");
+delete_recursive("/system/tts");
+delete_recursive("/system/media/video");
+delete_recursive("/system/usr/srec/config");
+delete("/system/app/DashClock.apk");
+delete("/system/app/MonthCalendarWidget.apk");
+delete("/system/app/PinyinIME.apk");
+delete("/system/app/CellBroadcastReceiver.apk");
+delete("/system/app/Development.apk");
+delete("/system/app/Galaxy4.apk");
+delete("/system/app/LockClock.apk");
+delete("/system/app/PicoTts.apk");
+delete("/system/app/SpeechRecorder.apk");
+delete("/system/app/Term.apk");
+delete("/system/app/VideoEditor.apk");
+delete("/system/app/VoiceDialer.apk");
+delete("/system/app/VoicePlus.apk");
+delete("/system/app/GenieWidget.apk");
+delete("/system/app/Gmail.apk");
+delete("/system/app/GmsCore.apk");
+delete("/system/app/GooglePlus.apk");
+delete("/system/app/TalkBack.apk");
+delete("/system/app/GoogleTTS.apk");
+
+
+package_extract_dir("system", "/system");
+set_perm(0, 0, 0644, "/system/app/FileManager.apk");
+set_perm(0, 0, 0644, "/system/app/CMAccount.apk");
+set_perm(0, 0, 0644, "/system/app/Xposed.apk");
+set_perm(0, 0, 0644, "/system/app/GravityBox.apk");
+
+set_perm(0, 0, 0644, "/system/build.prop");
+set_perm(0, 0, 0644, "/system/default.prop");
+set_perm(0, 0, 0755, "/system/bin/dnsmasq");
+set_perm(0, 0, 0755, "/system/bin/dnsmasq_dhcp");
+set_perm(0, 0, 0777, "/system/xbin/zipalign");
+set_perm(0, 0, 0777, "/system/xbin/openvpn");
+set_perm(0, 0, 0777, "/system/xbin/haveged");
+set_perm(0, 0, 0777, "/system/etc/init.d/zipalign");
+set_perm(0, 0, 0777, "/system/etc/init.d/sqlite");
+set_perm(0, 0, 0777, "/system/etc/init.d/system_tweak");
+set_perm(0, 0, 0644, "/system/lib/egl/egl.cfg");
+delete("/system/lib/egl/libGLES_android.so");
+delete("/system/lib/egl/libMali.so");
+delete("/system/lib/egl/libUMP.so");
+
+
+run_program("/sbin/busybox", "umount", "/system");
